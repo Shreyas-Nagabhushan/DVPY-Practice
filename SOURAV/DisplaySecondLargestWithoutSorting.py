@@ -1,10 +1,10 @@
-def display_second_largest(a):
-    l = max(a)
-    cpy = []
-    for e in a:
-        if e != l:
-            cpy.append(e)
-    
-    print(max(cpy))
+# (lambda arr: print([max(arr), max([i for i in arr if i!=max(arr)])]))(list(map(int, input('Enter elements: ').split()))) 
 
-display_second_largest([3,56,2,5,4,5,3,6,8,31,5,4,2,1,3,42,56])
+def find_largest(arr):
+    print('Largest: ', max(arr))
+    cpy = [num for num in arr if num != max(arr)]
+    print('Second Largest: ', max(cpy))
+
+n = int(input('Enter number of elements: '))
+arr = [int(input('Enter number: ')) for _ in range(n)]
+find_largest(arr)
